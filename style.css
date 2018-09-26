@@ -428,7 +428,19 @@ p.txt-copyright {
 
 @media screen and (max-width: 630px) {
   .nav-link {
-    flex-basis: 150px;
+    flex-basis: 130px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .nav-link {
+    flex-basis: 120px;
+  }
+}
+
+@media screen and (max-width: 305px) {
+  .nav-link {
+    flex-basis: 100px;
   }
 }
 
