@@ -408,7 +408,7 @@ p.txt-copyright {
     background: rgba(0,0,0,0);
     flex-shrink: 0;
     flex-grow: 0;
-    flex-basis: 25vw;
+    flex-basis: 20vw;
     border: 1.5px solid rgba(0, 0, 0, 0.5);
     border-radius: 3rem;
     color: #000;
@@ -423,6 +423,12 @@ p.txt-copyright {
 
   .form-section {
     padding: 5vh 0;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .nav-link {
+    flex-basis: 150px;
   }
 }
 
