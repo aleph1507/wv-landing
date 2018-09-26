@@ -393,14 +393,14 @@ p.txt-copyright {
 
   .nav-link {
     font-family: latoBold;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 20px;
     text-transform: uppercase;
     background: rgba(0,0,0,0);
     border: 1.5px solid rgba(0, 0, 0, 0.5);
     border-radius: 3rem;
     color: #000;
-    /* padding: 0.5% 1%; */
+    padding: 0.5% 4%;
     /* width:15%; */
     text-align:center;
   }
