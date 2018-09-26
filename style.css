@@ -402,17 +402,17 @@ p.txt-copyright {
 
   .nav-link {
     font-family: latoBold;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 20px;
     text-transform: uppercase;
     background: rgba(0,0,0,0);
     flex-shrink: 0;
     flex-grow: 0;
-    flex-basis: 20vw;
+    flex-basis: 25vw;
     border: 1.5px solid rgba(0, 0, 0, 0.5);
     border-radius: 3rem;
     color: #000;
-    padding: 0.5% 4%;
+    padding: 0.8% 5%;
     /* width:15%; */
     text-align:center;
   }
@@ -429,18 +429,24 @@ p.txt-copyright {
 @media screen and (max-width: 630px) {
   .nav-link {
     flex-basis: 130px;
+    font-size: 12px;
+    line-height: 20px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .nav-link {
     flex-basis: 120px;
+    font-size: 12px;
+    line-height: 20px;
   }
 }
 
 @media screen and (max-width: 305px) {
   .nav-link {
     flex-basis: 100px;
+    font-size: 12px;
+    line-height: 20px;
   }
 }
 
