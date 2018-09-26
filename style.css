@@ -388,12 +388,12 @@ p.txt-copyright {
   }
 
   .navbar {
-      padding: 1% 2%;
+      padding: 4% 2%;
   }
 
   .nav-link {
     font-family: latoBold;
-    font-size: 11px;
+    font-size: 10px;
     line-height: 20px;
     text-transform: uppercase;
     background: rgba(0,0,0,0);
@@ -427,7 +427,7 @@ p.txt-copyright {
     font-size: 5vw;
   }
 
-  /* .nav-link {
+  .nav-link {
     font-family: latoBold;
     font-size: 14px;
     line-height: 20px;
@@ -436,10 +436,11 @@ p.txt-copyright {
     border: 2px solid black;
     border-radius: 3rem;
     color: #000;
-    width:20%;
+    /* padding: 0.5% 1%; */
+    /* width:15%; */
     text-align:center;
-    cursor:pointer;
-  } */
+  }
+
 }
 
 @media screen and (min-width: 1200px) {
