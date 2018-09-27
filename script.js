@@ -10,6 +10,10 @@ window.addEventListener('load', function (event) {
 
   var brand = document.querySelector('#brand');
 
+  var sendMsgBtn = document.getElementById("c-form-submit");
+
+  var submitMsg = document.getElementById("submitMsg");
+
   function toggleMenu() {
     if (window.pageYOffset >= sticky) {
       navbar.classList.add("sticky");
@@ -30,6 +34,19 @@ window.addEventListener('load', function (event) {
 
   brand.addEventListener('click', function() {
     smoothScroll("#hero-section", 1000);
+  });
+
+  sendMsgBtn.addEventListener('click', function() {
+    console.log('clicked send message');
+    var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // submitMsg.innerHTML = this.responseText;
+                console.log('this.responseText: ', this.responseText);
+            }
+        }
+        xmlhttp.open("GET", "ajax_mail_handler.php", true);
+        xmlhttp.send();
   });
 
   function smoothScroll(target, duration){

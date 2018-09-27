@@ -97,7 +97,7 @@
           <p class="short mx-auto" id="form-p">
             If you would you like to know more about our work and services,
             please get in touch with us. We're available 8.00 AM – 4:00 PM CET,
-            Monday through Friday. We do our best to respond to each request .
+            Monday through Friday. We do our best to respond to each request
             with a personalized reply within few hours.
           </p>
         </div>
@@ -106,24 +106,27 @@
           <form class="c-form" action="index.html" id="c-form" method="post">
             <div class="row">
               <div class="col-12 col-lg-6 padded-right">
-                <input type="text" placeholder="Your Name *" class="c-form-input">
-                <input type="text" placeholder="Enter address *" class="c-form-input">
-                <input type="text" placeholder="Phone" class="c-form-input">
-                <input type="text" placeholder="Company *" class="c-form-input">
-                <input type="text" placeholder="City *" class="c-form-input">
-                <input type="text" placeholder="Country" class="c-form-input">
+                <input type="text" placeholder="Your Name *" name="name" class="c-form-input">
+                <input type="text" placeholder="Enter address *" name="address" class="c-form-input">
+                <input type="text" placeholder="Phone" name="phone" class="c-form-input">
+                <input type="text" placeholder="Company *" name="company" class="c-form-input">
+                <input type="text" placeholder="City *" name="city" class="c-form-input">
+                <input type="text" placeholder="Country" name="country" class="c-form-input">
               </div>
               <div class="col-12 col-lg-6 padded-left text-left">
                 <label for="c-form-message" class="c-form-label">
                   Please tell us a bit more about you enquiry *
                 </label>
-                <textarea name="c-form-message" id="c-form-message"
+                <textarea name="c-form-message" name="msg" id="c-form-message"
                 placeholder="Add note here..." class="c-form-input c-form-textarea"></textarea>
               </div>
             </div>
             <div class="row">
               <div class="col-12 mx-auto">
-                <button type="button" name="c-form-submit" class="c-form-submit">send message</button>
+                <button type="button" name="c-form-submit" id="c-form-submit" class="c-form-submit">send message</button>
+              </div>
+              <div id="submitMsg" class="col-12 mx-auto">
+
               </div>
             </div>
           </form>
