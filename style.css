@@ -426,6 +426,13 @@ p.txt-copyright {
   }
 }
 
+#submitMsg {
+  text-align:left;
+  display:inline-block;
+  margin:auto;
+  margin-top:5%;
+}
+
 @media screen and (max-width: 630px) {
   .nav-link {
     flex-basis: 130px;

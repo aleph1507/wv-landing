@@ -36,18 +36,72 @@ window.addEventListener('load', function (event) {
     smoothScroll("#hero-section", 1000);
   });
 
-  sendMsgBtn.addEventListener('click', function() {
-    console.log('clicked send message');
-    var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                // submitMsg.innerHTML = this.responseText;
-                console.log('this.responseText: ', this.responseText);
-            }
+  // sendMsgBtn.addEventListener('click', function() {
+  //   console.log('clicked send message');
+  //   var xmlhttp = new XMLHttpRequest();
+  //       xmlhttp.onreadystatechange = function() {
+  //           if (this.readyState == 4 && this.status == 200) {
+  //               submitMsg.innerHTML = this.responseText;
+  //               // console.log('this.responseText: ', this.responseText);
+  //           }
+  //       }
+  //       xmlhttp.open("POST", "ajax_mail_handler.php", true);
+  //       xmlhttp.send();
+  // });
+
+  $('#c-form').submit(function(event) {
+    var formData = {
+      'name'              : $('input[name=name]').val(),
+      'email'             : $('input[name=email]').val(),
+      'address'    : $('input[name=address]').val(),
+      'phone'    : $('input[name=phone]').val(),
+      'company'    : $('input[name=company]').val(),
+      'city'    : $('input[name=city]').val(),
+      'country'    : $('input[name=country]').val(),
+      'msg'    : $('#c-form-message').val(),
+    };
+
+    $.ajax({
+           type        : 'POST',
+           url         : 'ajax_mail_handler.php',
+           data        : formData,
+           encode      : true,
+           dataType    : 'json'
+       })
+       .done(function(data) {
+         // console.log('data');
+         // console.log(data);
+         submitMsg.innerHTML = '';
+         submitMsg.className = "";
+         if ( ! data.success) {
+            submitMsg.classList.add('alert', 'alert-danger');
+            submitMsg.innerHTML += '<ul>';
+
+          if(data.errors.name)
+            submitMsg.innerHTML += '<li>' + data.errors.name + '</li>';
+          if(data.errors.email)
+            submitMsg.innerHTML += '<li>' + data.errors.email + '</li>';
+          if(data.errors.city)
+            submitMsg.innerHTML += '<li>' + data.errors.city + '</li>';
+          if(data.errors.company)
+            submitMsg.innerHTML += '<li>' + data.errors.company + '</li>';
+          if(data.errors.country)
+            submitMsg.innerHTML += '<li>' + data.errors.country + '</li>';
+          if(data.errors.msg)
+            submitMsg.innerHTML += '<li>' + data.errors.msg + '</li>';
+
+          submitMsg.innerHTML += '</ul>';
+        } else {
+
+          submitMsg.classList.add('alert', 'alert-success');
+          submitMsg.innerHTML += 'Your message has been sent!';
         }
-        xmlhttp.open("GET", "ajax_mail_handler.php", true);
-        xmlhttp.send();
+       });
+
+       event.preventDefault();
   });
+
+  // sendMsgBtn.on('click')
 
   function smoothScroll(target, duration){
     var target = document.querySelector(target);
